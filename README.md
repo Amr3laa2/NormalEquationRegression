@@ -1,5 +1,43 @@
-# NormalEquationRegression
-Linear Regression Model using Normal Equation which is basically Finding weights of a regression model using matrix operation and linear algebra  
+# Normal Equation Regression
 
+A from-scratch implementation of **Linear Regression using the Normal Equation** — solving for model weights directly via matrix algebra, with no gradient descent required. Applied to a real-world **apartment price prediction** dataset.
 
-![equation](https://latex.codecogs.com/svg.latex?%5Cbg_white%20X%5Ctheta%3Dy%5C%5C%20X%5E%7Bt%7DX%5Ctheta%3DX%5E%7Bt%7Dy%5C%5C%20%28X%5E%7Bt%7DX%29%5E%7B-1%7DX%5E%7Bt%7DX%5Ctheta%3D%28X%5E%7Bt%7DX%29%5E%7B-1%7DX%5E%7Bt%7Dy%5C%5C%20%5Ctheta%3D%28X%5E%7Bt%7DX%29%5E%7B-1%7DX%5E%7Bt%7Dy)
+## What is the Normal Equation?
+
+Instead of iteratively minimizing a cost function, the Normal Equation computes the optimal weights θ analytically in a single step:
+
+```
+θ = (XᵀX)⁻¹ Xᵀy
+```
+
+| Symbol | Meaning |
+|---|---|
+| `X` | Feature matrix |
+| `y` | Target vector (prices) |
+| `θ` | Model weights (solved directly) |
+
+## Notebook
+
+| File | Description |
+|---|---|
+| `ApartmentPricePrediction.ipynb` | Full pipeline: data loading, feature engineering, Normal Equation solution, and evaluation |
+
+## Tech Stack
+
+- Python
+- NumPy (matrix operations)
+- Pandas (data handling)
+- Jupyter Notebook
+
+## Getting Started
+
+```bash
+pip install numpy pandas jupyter
+jupyter notebook ApartmentPricePrediction.ipynb
+```
+
+## When to Use the Normal Equation
+
+- Small to medium datasets (no need to tune a learning rate)
+- When you want an exact closed-form solution
+- Teaching/understanding linear algebra behind regression
